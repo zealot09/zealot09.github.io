@@ -1,175 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Zealot09&#8217;s Blog</title>
-  <meta name="author" content="zealot09">
-
-  
-  <meta name="description" content="blog Redux React Boilerplate Long time no articles.
-Last one year working on html5 apps, hybrid apps, using backbone. Faced some problems with &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://zealot09.github.io">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/styles.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Zealot09's Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <script src="/javascripts/jquery.sidr.min.js"></script>
-  <script src="/javascripts/ah-blue.js"></script>
-  
-  
-
-</head> 
-
-<body   >
-  <div class="aux-container">
-    <a id="nav-toggle" href="#sidr"></a>
-    <a id="search-toggle"></a>
-</div>
-
-<header class="header-container clearfix">
-        <a href="/"><img src="/images/ah-frame.svg" onerror="this.onerror=null; this.src='ah-frame.png'"></a>
-</header>
-
-  <div class="main-container">
-    <div class="main wrapper clearfix">
-    	
-    	<aside>
-			
-			  	<div class="search-container">
-					<form action="http://google.com/search" method="get">
-						<fieldset role="search">
-							<input type="hidden" name="q" value="site:blog.alexharr.is" />
-							<input class="search-field" type="text" name="q" results="0" placeholder=""/>
-							<input class="submit" type="submit" value=""/>
-						</fieldset>
-					</form>
-				</div>
-			
-		  <div id="main-nav">
-    <nav>
-        <ul>
-        	<li>
-        		
-					<h3>Recent Posts</h3>
-<ul>
-	
-    <li>
-    	<a href="/blog/2016/02/18/react-redux/">Redux React Boilerplate</a>
-    </li>
+  <title><![CDATA[Zealot09's Blog]]></title>
+  <link href="http://zealot09.github.io/atom.xml" rel="self"/>
+  <link href="http://zealot09.github.io/"/>
+  <updated>2017-07-13T23:52:37+08:00</updated>
+  <id>http://zealot09.github.io/</id>
+  <author>
+    <name><![CDATA[zealot09]]></name>
     
-    <li>
-    	<a href="/blog/2015/05/02/factorial-division/">Factorial Division</a>
-    </li>
-    
-    <li>
-    	<a href="/blog/2015/04/02/login-with-password-remembered/">Login With Password Remembered</a>
-    </li>
-    
-    <li>
-    	<a href="/blog/2015/03/13/node-crawler/">Node Crawler</a>
-    </li>
-    
-    <li>
-    	<a href="/blog/2014/10/29/javascript-bi-bao/">Javascript 闭包</a>
-    </li>
-    
-</ul>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
   
-  <a href="https://github.com/zealot09">@zealot09</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'zealot09',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/guol.zealot@gmail.com?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-				
-        	</li>
-        	<li>
-        		<ul>
-                    <li>Projects - <a href="http://www.alexharr.is" target="_blank">alexharr.is</a>
-        			<li>Github - <a href="http://www.github.com/alexharris" target="_blank">github.com/alexharris</a></li>
-                    <li>Twitter - <a href="http://www.twitter.com/alexharris6" target="_blank">@alexharris6</a></li>
-                    <li>Email - <a href="mailto:alexharris6@gmail.com" target="_blank">alexharris6 at gmail</a></li>
-        		</ul>
-        	</li>
-        </ul>
-    </nav>
-</div>
-		</aside>
-		
-      
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2016/02/18/react-redux/">
-      Redux React Boilerplate
-    </a></h1>
-  
-</header>
-
-  <section><p>Long time no articles.
+  <entry>
+    <title type="html"><![CDATA[redux react boilerplate]]></title>
+    <link href="http://zealot09.github.io/blog/2016/02/18/react-redux/"/>
+    <updated>2016-02-18T15:02:52+08:00</updated>
+    <id>http://zealot09.github.io/blog/2016/02/18/react-redux</id>
+    <content type="html"><![CDATA[<p>Long time no articles.
 Last one year working on html5 apps, hybrid apps, using backbone. Faced some problems with backbone, I thought more about frontend.
 several problems below with backbone</p>
 
@@ -589,36 +438,15 @@ the the middleware do request using <code>superagent</code> or some other http r
 
 
 <p>then reducers still accept actions and change the state, and afterwards react re-render views.</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/05/02/factorial-division/">
-      Factorial Division
-    </a></h1>
-  
-</header>
-
-  <section><h1>1. factorial problem</h1>
+  <entry>
+    <title type="html"><![CDATA[factorial division]]></title>
+    <link href="http://zealot09.github.io/blog/2015/05/02/factorial-division/"/>
+    <updated>2015-05-02T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2015/05/02/factorial-division</id>
+    <content type="html"><![CDATA[<h1>1. factorial problem</h1>
 
 <p>When playing on <a href="http://www.codewars.com/">code war</a>, meeting a problem which is called factorial division. Calculating the result of <code>n!/d!</code> <code>(n&gt;d)</code>.
 It&rsquo;s easy, here is my solution:</p>
@@ -652,36 +480,15 @@ It&rsquo;s easy, here is my solution:</p>
 
 
 <p>Excellent!</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/04/02/login-with-password-remembered/">
-      Login With Password Remembered
-    </a></h1>
-  
-</header>
-
-  <section><h1>login with password remembered</h1>
+  <entry>
+    <title type="html"><![CDATA[login with password remembered]]></title>
+    <link href="http://zealot09.github.io/blog/2015/04/02/login-with-password-remembered/"/>
+    <updated>2015-04-02T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2015/04/02/login-with-password-remembered</id>
+    <content type="html"><![CDATA[<h1>login with password remembered</h1>
 
 <p>With password remembered, the password must be encrypted in some way and stored in the cookie, actually there&rsquo;s 3 cookies in header when user browser request for certification.
 <code>$.cookie('cn')</code>- username
@@ -788,36 +595,15 @@ It&rsquo;s easy, here is my solution:</p>
 
 
 <p>We can store the  &lsquo;password&rsquo; safely in the browser.</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/03/13/node-crawler/">
-      Node Crawler
-    </a></h1>
-  
-</header>
-
-  <section><h1>1. Node crawler</h1>
+  <entry>
+    <title type="html"><![CDATA[Node crawler]]></title>
+    <link href="http://zealot09.github.io/blog/2015/03/13/node-crawler/"/>
+    <updated>2015-03-13T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2015/03/13/node-crawler</id>
+    <content type="html"><![CDATA[<h1>1. Node crawler</h1>
 
 <p>It&rsquo;s been a long time when my last blog. This time I&rsquo;m going to start an open source project called <a href="https://github.com/zealot09/node-crawler.git">node-crawler</a>. Let&rsquo;s get straight to the point, the project includes three parts:</p>
 
@@ -868,36 +654,15 @@ It&rsquo;s easy, here is my solution:</p>
 
 
 <p>This blog is just an introduction of the crawling system. Other blogs will introduce how to implement it! Welcome!</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2014/10/29/javascript-bi-bao/">
-      Javascript 闭包
-    </a></h1>
-  
-</header>
-
-  <section><h1>Javascript闭包</h1>
+  <entry>
+    <title type="html"><![CDATA[Javascript 闭包]]></title>
+    <link href="http://zealot09.github.io/blog/2014/10/29/javascript-bi-bao/"/>
+    <updated>2014-10-29T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2014/10/29/javascript-bi-bao</id>
+    <content type="html"><![CDATA[<h1>Javascript闭包</h1>
 
 <p>说到javascript的闭包，就要先说一下传统语言的一些特征，如C，Java，C#等等，<code>void Test() {int i = 0;}</code> ，当Test方法调用结束时，执行栈弹出，局部变量被回收，而js的闭包，则是提供了一种在test这个执行域(函数)消亡时，仍能够访问i的方式。</p>
 
@@ -1015,117 +780,22 @@ It&rsquo;s easy, here is my solution:</p>
 <p>alert结果是5而非4，如果把最上级的right定义注释掉，则right is not defined。所以这个时候是不是能理解闭包的原理了，虽然greeting方法已经消亡，但是返回的匿名函数的Scope保存有其上一级的outer reference，也就是text变量等的集合。</p>
 
 <p>下一篇文章会介绍一下使用闭包的场景和相应的危害，欢迎拍砖。</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2014/10/15/hello/">
-      Hello
-    </a></h1>
-  
-</header>
-
-  <section><h1>Welcome to my blog!</h1>
+  <entry>
+    <title type="html"><![CDATA[Hello]]></title>
+    <link href="http://zealot09.github.io/blog/2014/10/15/hello/"/>
+    <updated>2014-10-15T15:02:52+08:00</updated>
+    <id>http://zealot09.github.io/blog/2014/10/15/hello</id>
+    <content type="html"><![CDATA[<h1>Welcome to my blog!</h1>
 
 <p>It&rsquo;s been a long time since my last wordpress blog dropped down. Thanks the <strong>terrible</strong> US VPS I&#8217;v been always using, it just dropped down before I transferred my important backups.</p>
 
 <p>Put it aside, I didn&rsquo;t want to write blogs for a long time since the accident. It&rsquo;s popular setting a blog using github pages &amp; jekyll because of github&rsquo;s free static pages hosting service and powerful</p>
 
 <p>CDN service. So just a new try!</p>
-</section>
+]]></content>
+  </entry>
   
-  
-
-
-
-</article>
-
-<div class="pagination">
-
-
-
-</div>
-
-
-    </div>
-  </div>
-  <footer class="main-footer">
-	<section class="interior-footer">
-		<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-	</section>
-</footer>
-
-
-  
-
-
-<script type="text/javascript">
-      var disqus_shortname = 'zealot09';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-</body>
-</html>
+</feed>

@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Zealot09&#8217;s Blog</title>
+  <title>redux react boilerplate - Zealot09&#8217;s Blog</title>
   <meta name="author" content="zealot09">
 
   
@@ -19,7 +19,7 @@ Last one year working on html5 apps, hybrid apps, using backbone. Faced some pro
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zealot09.github.io">
+  <link rel="canonical" href="http://zealot09.github.io/blog/2016/02/18/react-redux">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/styles.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Zealot09's Blog" type="application/atom+xml">
@@ -146,9 +146,7 @@ Last one year working on html5 apps, hybrid apps, using backbone. Faced some pro
 </div>
 		</aside>
 		
-      
-
-
+      <div>
 <article>
 	<header>
   <div class="article-tags">
@@ -163,9 +161,9 @@ Last one year working on html5 apps, hybrid apps, using backbone. Faced some pro
 
   </div>
   
-    <h1><a href="/blog/2016/02/18/react-redux/">
+    <h1>
       Redux React Boilerplate
-    </a></h1>
+    </h1>
   
 </header>
 
@@ -590,481 +588,17 @@ the the middleware do request using <code>superagent</code> or some other http r
 
 <p>then reducers still accept actions and change the state, and afterwards react re-render views.</p>
 </section>
-  
-  
 
 
 
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/05/02/factorial-division/">
-      Factorial Division
-    </a></h1>
-  
-</header>
-
-  <section><h1>1. factorial problem</h1>
-
-<p>When playing on <a href="http://www.codewars.com/">code war</a>, meeting a problem which is called factorial division. Calculating the result of <code>n!/d!</code> <code>(n&gt;d)</code>.
-It&rsquo;s easy, here is my solution:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">factorialDivision</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">&gt;</span><span class="nx">d</span><span class="p">;</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="nx">result</span> <span class="o">*=</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here is another solution using Recursive:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">factorialDivision</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">n</span><span class="o">==</span><span class="nx">d</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">factorialDivision</span><span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nx">d</span><span class="p">)</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Excellent!</p>
-</section>
-  
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/04/02/login-with-password-remembered/">
-      Login With Password Remembered
-    </a></h1>
-  
-</header>
-
-  <section><h1>login with password remembered</h1>
-
-<p>With password remembered, the password must be encrypted in some way and stored in the cookie, actually there&rsquo;s 3 cookies in header when user browser request for certification.
-<code>$.cookie('cn')</code>- username
-<code>$.cookie('ct')</code>- time stamp last login
-<code>$.cookie('ctoken')</code>- encrypted password or some other info required to be certificated by server</p>
-
-<p>Then we know <code>ctoken</code> is important, there&rsquo;s problem- how to ensure the password is not cracked by hackers, below is a way to do some calculation like or with two strings.</p>
-
-<p>Think about this: if we just simply encrypt the password with MD5, sha1&hellip; and store in browser, is that safe? Maybe, but the most keys are cracked with md5, or sha1&hellip;, so we should encrypt it with some more complicate way:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'> <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#username&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">pass</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#password&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">sk</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">().</span><span class="nx">toString</span><span class="p">();</span>
-</span><span class='line'> <span class="nx">$</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;cn&#39;</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="p">{</span> <span class="nx">expires</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span> <span class="p">});</span>
-</span><span class='line'> <span class="nx">$</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;ck&#39;</span><span class="p">,</span> <span class="nx">sk</span><span class="p">,</span> <span class="p">{</span> <span class="nx">expires</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span> <span class="p">});</span>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">phash</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">MD5</span><span class="p">(</span><span class="nx">pass</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">cthash</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">MD5</span><span class="p">(</span><span class="nx">user</span> <span class="o">+</span> <span class="nx">sk</span> <span class="o">+</span> <span class="nx">phash</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'> <span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">xorString</span><span class="p">(</span><span class="nx">phash</span><span class="p">,</span> <span class="nx">cthash</span><span class="p">);</span>
-</span><span class='line'> <span class="nx">$</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">,</span> <span class="nx">token</span><span class="p">,</span> <span class="p">{</span> <span class="nx">expires</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span> <span class="p">});</span>
-</span><span class='line'> <span class="c1">//then request the server for validation</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>what&rsquo;s <code>xorString</code>, it creates a token for server validation. The <code>xorString</code> gets two params - <code>phash</code> which is the password encrypted in MD5, another is <code>cthash</code> which is the <code>username + timestamp + MD5(password)</code> encrypted in MD5. We can see the <code>xorString</code> is handling the two strings in a special way. What will it?</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'>        <span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="s2">&quot;0123456789abcdef&quot;</span><span class="p">;</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">xorString</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="kd">var</span> <span class="nx">rs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-</span><span class='line'>            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                <span class="nx">rs</span> <span class="o">+=</span> <span class="nx">hex</span><span class="p">[</span><span class="nx">hex</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="o">^</span> <span class="nx">hex</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">key</span><span class="p">[</span><span class="nx">i</span><span class="p">])];</span>
-</span><span class='line'>            <span class="p">}</span>
-</span><span class='line'>            <span class="k">return</span> <span class="nx">rs</span><span class="p">;</span>
-</span><span class='line'>        <span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p> It&rsquo;s easy, just a or operation with each MD5 result,  it&rsquo;s an MD5 result again, but not the result of password. And although others know the token is some or result. It&rsquo;s nearly impossible for them to crack it.</p>
-
-<p>Of course, we can calculate the right token easily in the server side. Here&rsquo;s a version of C#:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'>    <span class="k">private</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">StringXor</span><span class="p">(</span><span class="kt">string</span> <span class="n">str</span><span class="p">,</span> <span class="kt">byte</span><span class="p">[]</span> <span class="n">key</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kt">var</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">key</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span><span class='line'>        <span class="p">{</span>
-</span><span class='line'>            <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)(</span><span class="n">Convert</span><span class="p">.</span><span class="n">ToByte</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">i</span> <span class="p">*</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="m">16</span><span class="p">)</span> <span class="p">^</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">BitConverter</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">key</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">).</span><span class="n">ToLower</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="k">private</span> <span class="kt">bool</span> <span class="nf">auth</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="kt">string</span> <span class="n">cn</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-</span><span class='line'>      <span class="kt">string</span> <span class="n">ct</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-</span><span class='line'>      <span class="kt">string</span> <span class="n">token</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="kt">string</span> <span class="n">password</span> <span class="p">=</span> <span class="s">&quot;&quot;</span> <span class="c1">//select from the db</span>
-</span><span class='line'>      <span class="kt">byte</span><span class="p">[]</span> <span class="n">cctoken</span><span class="p">;</span>
-</span><span class='line'>                <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">md5</span> <span class="p">=</span> <span class="n">MD5</span><span class="p">.</span><span class="n">Create</span><span class="p">())</span>
-</span><span class='line'>                <span class="p">{</span>
-</span><span class='line'>                    <span class="n">cctoken</span> <span class="p">=</span> <span class="n">md5</span><span class="p">.</span><span class="n">ComputeHash</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">ASCII</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">cn</span> <span class="p">+</span> <span class="n">ct</span> <span class="p">+</span> <span class="n">password</span><span class="p">));</span>
-</span><span class='line'>                <span class="p">}</span>
-</span><span class='line'>                <span class="k">return</span> <span class="n">token</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">StringXor</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">cctoken</span><span class="p">))</span> <span class="p">?</span> <span class="k">true</span> <span class="p">:</span> <span class="k">false</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>We can store the  &lsquo;password&rsquo; safely in the browser.</p>
-</section>
-  
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2015/03/13/node-crawler/">
-      Node Crawler
-    </a></h1>
-  
-</header>
-
-  <section><h1>1. Node crawler</h1>
-
-<p>It&rsquo;s been a long time when my last blog. This time I&rsquo;m going to start an open source project called <a href="https://github.com/zealot09/node-crawler.git">node-crawler</a>. Let&rsquo;s get straight to the point, the project includes three parts:</p>
-
-<h2>1.1 Admin Dashboard</h2>
-
-<p>It&rsquo;s a distribute crawling service, the admin can check the crawler status, manage the crawling data, control the crawler client, manage the client config and deliver the client to different servers through the platform. Or some functions like data analyze or data statics. (This backend mainly developed with angularJs ).</p>
-
-<h2>1.2 Backend Service</h2>
-
-<p>Nodejs backend service which is responsible for collecting the uploaded data. Mainly include some functions like filter the data, analyze the crawling result and store into the database.</p>
-
-<h2>1.3 Crawler Client</h2>
-
-<p>The client is responsible for crawling the pages, execute scripts, control spider amount,. Think that the backend service send some configs, the client read it and do the crawling job the server send it.</p>
-
-<p>Actually the client should be smart to avoid preventing by the crawling target server, It should have a lot of strategies like changing the ip, changing the agent, limit the spider speed..and so on.</p>
-
-<p>The server send message to check the client and start the client, send config like to start the client:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">clientConfig</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">//100/s to access the target website</span>
-</span><span class='line'>  <span class="nx">workers</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">//send 10 workers together crawling the website</span>
-</span><span class='line'>  <span class="c1">//some other configs</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>the client start to crawling work as the config:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">crawlerConfig</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">target</span><span class="o">:</span> <span class="s2">&quot;http://www.taobao.com/p/xxxxx&quot;</span><span class="p">,</span> <span class="c1">//taget crawling website</span>
-</span><span class='line'>  <span class="nx">element</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">//target element</span>
-</span><span class='line'>  <span class="nx">attr</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">//the real data to grab</span>
-</span><span class='line'>  <span class="c1">//some other configs about the target web page</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This blog is just an introduction of the crawling system. Other blogs will introduce how to implement it! Welcome!</p>
-</section>
-  
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/javascript/'>javascript</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2014/10/29/javascript-bi-bao/">
-      Javascript 闭包
-    </a></h1>
-  
-</header>
-
-  <section><h1>Javascript闭包</h1>
-
-<p>说到javascript的闭包，就要先说一下传统语言的一些特征，如C，Java，C#等等，<code>void Test() {int i = 0;}</code> ，当Test方法调用结束时，执行栈弹出，局部变量被回收，而js的闭包，则是提供了一种在test这个执行域(函数)消亡时，仍能够访问i的方式。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span> <span class="c1">// local variable  </span>
-</span><span class='line'><span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="p">}</span> <span class="c1">// 每次调用时，产生闭包，并返回内部函数对象给调用者  </span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">sayHello</span><span class="o">=</span><span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Closure&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="nx">sayHello</span><span class="p">()</span> <span class="c1">// 通过闭包访问到了局部变量text  </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>1.闭包原理</h2>
-
-<p>闭包的原理涉及到ECMAScript语言的一些特征，下面进行详述</p>
-
-<h3>1.1 Execution Context</h3>
-
-<blockquote><p>控制权转移到一段可执行代码时候，就会产生一个Execution Context(简称EC)。</p></blockquote>
-
-<p>一段可执行代码在ECMAScript里的定义可视为一个function（eval暂不提，strict mode也将其排除在外）,即函数调用的时候，就会通过压栈的方式将一个个function的ECStack压入栈中，该function return的时候就从栈中pop出来，用个简单的例子来形容:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="nx">foo</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-</span><span class='line'><span class="p">})(</span><span class="kc">false</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// 压栈情况，globalContext视环境而定，如果是浏览器，就是window</span>
-</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span>
-</span><span class='line'>  <span class="nx">globalContext</span>
-</span><span class='line'><span class="p">];</span>
-</span><span class='line'><span class="c1">// 压入递归方法foo</span>
-</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span> <span class="err">–</span> <span class="nx">recursively</span>
-</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span>
-</span><span class='line'>  <span class="nx">globalContext</span>
-</span><span class='line'><span class="p">];</span>
-</span><span class='line'><span class="c1">//再弹出至只剩globalContext</span>
-</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
-</span><span class='line'>  <span class="nx">globalContext</span>
-</span><span class='line'><span class="p">];</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>而每个context又是由什么组成的呢,
-<code>context = {
-    VO = {}, //variable object，函数调用时的内部变量的集合，包括arguments，内部方法等.
-    this ,  //不赘述了，简而言之就是caller(</code>a.b()<code>的a)，当然new是另一情况了
-    scope chain = [] //见下文，用于变量查找
-}</code>
-附上 <a href="http://dmitrysoshnikov.com/ecmascript/chapter-2-variable-object/">VO</a>,
-<a href="http://dmitrysoshnikov.com/ecmascript/chapter-3-this/">this</a>,
-闭包的产生主要是Scope Chain原因，但是强烈推荐以上几篇文章，对于理解ECMAScript的机制有很大帮助，能让人顿悟很多东西。</p>
-
-<h3>1.2 Scope</h3>
-
-<blockquote><p>Scope上下文，即是在执行语句时候能够访问到的所有变量的集合，Javascript是允许inner function存在的，因而其Scope就是一个链表形式的存在，其最顶端就是window(浏览器环境)，然后每定义一个function，就定义一个Scope Object，保存一个outer reference，以访问上一级变量集合，形成一个层级式的链，处于最底部的function会一层一层向上找变量，这也是为什么不要使用<code>t = 'without var is global var'</code>，会大大降低执行效率。附上<a href="http://dmitrysoshnikov.com/ecmascript/chapter-2-variable-object/">ECMA-262</a></p></blockquote>
-
-<p>而每个Scope保存的out reference是由function定义时决定的，而不是调用执行时决定的，如</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>   <span class="nx">alert</span><span class="p">(</span><span class="nx">right</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-</span><span class='line'><span class="nx">s</span><span class="p">();</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nx">o</span><span class="p">();</span>
-</span><span class='line'><span class="p">})();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>alert结果是5而非4，如果把最上级的right定义注释掉，则right is not defined。所以这个时候是不是能理解闭包的原理了，虽然greeting方法已经消亡，但是返回的匿名函数的Scope保存有其上一级的outer reference，也就是text变量等的集合。</p>
-
-<p>下一篇文章会介绍一下使用闭包的场景和相应的危害，欢迎拍砖。</p>
-</section>
-  
-  
-
-
-
-</article>
-
-
-<article>
-	<header>
-  <div class="article-tags">
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/blog/'>blog</a>
-  
-</span>
-
-
-  </div>
-  
-    <h1><a href="/blog/2014/10/15/hello/">
-      Hello
-    </a></h1>
-  
-</header>
-
-  <section><h1>Welcome to my blog!</h1>
-
-<p>It&rsquo;s been a long time since my last wordpress blog dropped down. Thanks the <strong>terrible</strong> US VPS I&#8217;v been always using, it just dropped down before I transferred my important backups.</p>
-
-<p>Put it aside, I didn&rsquo;t want to write blogs for a long time since the accident. It&rsquo;s popular setting a blog using github pages &amp; jekyll because of github&rsquo;s free static pages hosting service and powerful</p>
-
-<p>CDN service. So just a new try!</p>
-</section>
-  
-  
-
-
-
-</article>
-
-<div class="pagination">
-
-
-
+	
+	  <section class="comments">
+	    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-
+	  </section>
+	
+</article>
+</div>
 
     </div>
   </div>
@@ -1082,7 +616,10 @@ It&rsquo;s easy, here is my solution:</p>
       var disqus_shortname = 'zealot09';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zealot09.github.io/blog/2016/02/18/react-redux/';
+        var disqus_url = 'http://zealot09.github.io/blog/2016/02/18/react-redux/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

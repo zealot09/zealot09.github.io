@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Javascript 闭包 - Zealot09&#8217;s Blog</title>
+  <meta name="author" content="zealot09">
+
+  
+  <meta name="description" content="javascript Javascript 闭包 Javascript闭包 说到javascript的闭包，就要先说一下传统语言的一些特征，如C，Java，C#等等，void Test() {int i = 0;} ，当Test方法调用结束时，执行栈弹出，局部变量被回收，而js的闭包， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zealot09.github.io/blog/2014/10/29/javascript-bi-bao">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/styles.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Zealot09's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/jquery.sidr.min.js"></script>
+  <script src="/javascripts/ah-blue.js"></script>
+  
+  
+
+</head> 
+
+<body   >
+  <div class="aux-container">
+    <a id="nav-toggle" href="#sidr"></a>
+    <a id="search-toggle"></a>
+</div>
+
+<header class="header-container clearfix">
+        <a href="/"><img src="/images/ah-frame.svg" onerror="this.onerror=null; this.src='ah-frame.png'"></a>
+</header>
+
+  <div class="main-container">
+    <div class="main wrapper clearfix">
+    	
+    	<aside>
+			
+			  	<div class="search-container">
+					<form action="http://google.com/search" method="get">
+						<fieldset role="search">
+							<input type="hidden" name="q" value="site:blog.alexharr.is" />
+							<input class="search-field" type="text" name="q" results="0" placeholder=""/>
+							<input class="submit" type="submit" value=""/>
+						</fieldset>
+					</form>
+				</div>
+			
+		  <div id="main-nav">
+    <nav>
+        <ul>
+        	<li>
+        		
+					<h3>Recent Posts</h3>
+<ul>
+	
+    <li>
+    	<a href="/blog/2016/02/18/react-redux/">Redux React Boilerplate</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/05/02/factorial-division/">Factorial Division</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/04/02/login-with-password-remembered/">Login With Password Remembered</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/03/13/node-crawler/">Node Crawler</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2014/10/29/javascript-bi-bao/">Javascript 闭包</a>
+    </li>
+    
+</ul>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/zealot09">@zealot09</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zealot09',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/guol.zealot@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+				
+        	</li>
+        	<li>
+        		<ul>
+                    <li>Projects - <a href="http://www.alexharr.is" target="_blank">alexharr.is</a>
+        			<li>Github - <a href="http://www.github.com/alexharris" target="_blank">github.com/alexharris</a></li>
+                    <li>Twitter - <a href="http://www.twitter.com/alexharris6" target="_blank">@alexharris6</a></li>
+                    <li>Email - <a href="mailto:alexharris6@gmail.com" target="_blank">alexharris6 at gmail</a></li>
+        		</ul>
+        	</li>
+        </ul>
+    </nav>
+</div>
+		</aside>
+		
+      <div>
+<article>
+	<header>
+  <div class="article-tags">
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+  </div>
+  
+    <h1>
+      Javascript 闭包
+    </h1>
+  
+</header>
+
+  <section><h1>Javascript闭包</h1>
+
+<p>说到javascript的闭包，就要先说一下传统语言的一些特征，如C，Java，C#等等，<code>void Test() {int i = 0;}</code> ，当Test方法调用结束时，执行栈弹出，局部变量被回收，而js的闭包，则是提供了一种在test这个执行域(函数)消亡时，仍能够访问i的方式。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">greeting</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span> <span class="c1">// local variable  </span>
+</span><span class='line'><span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="p">}</span> <span class="c1">// 每次调用时，产生闭包，并返回内部函数对象给调用者  </span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">sayHello</span><span class="o">=</span><span class="nx">greeting</span><span class="p">(</span><span class="s2">&quot;Closure&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">sayHello</span><span class="p">()</span> <span class="c1">// 通过闭包访问到了局部变量text  </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>1.闭包原理</h2>
+
+<p>闭包的原理涉及到ECMAScript语言的一些特征，下面进行详述</p>
+
+<h3>1.1 Execution Context</h3>
+
+<blockquote><p>控制权转移到一段可执行代码时候，就会产生一个Execution Context(简称EC)。</p></blockquote>
+
+<p>一段可执行代码在ECMAScript里的定义可视为一个function（eval暂不提，strict mode也将其排除在外）,即函数调用的时候，就会通过压栈的方式将一个个function的ECStack压入栈中，该function return的时候就从栈中pop出来，用个简单的例子来形容:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">foo</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span class='line'><span class="p">})(</span><span class="kc">false</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 压栈情况，globalContext视环境而定，如果是浏览器，就是window</span>
+</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span>
+</span><span class='line'>  <span class="nx">globalContext</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'><span class="c1">// 压入递归方法foo</span>
+</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span> <span class="err">–</span> <span class="nx">recursively</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="nx">foo</span><span class="o">&gt;</span> <span class="nx">functionContext</span>
+</span><span class='line'>  <span class="nx">globalContext</span>
+</span><span class='line'><span class="p">];</span>
+</span><span class='line'><span class="c1">//再弹出至只剩globalContext</span>
+</span><span class='line'><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="nx">globalContext</span>
+</span><span class='line'><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而每个context又是由什么组成的呢,
+<code>context = {
+    VO = {}, //variable object，函数调用时的内部变量的集合，包括arguments，内部方法等.
+    this ,  //不赘述了，简而言之就是caller(</code>a.b()<code>的a)，当然new是另一情况了
+    scope chain = [] //见下文，用于变量查找
+}</code>
+附上 <a href="http://dmitrysoshnikov.com/ecmascript/chapter-2-variable-object/">VO</a>,
+<a href="http://dmitrysoshnikov.com/ecmascript/chapter-3-this/">this</a>,
+闭包的产生主要是Scope Chain原因，但是强烈推荐以上几篇文章，对于理解ECMAScript的机制有很大帮助，能让人顿悟很多东西。</p>
+
+<h3>1.2 Scope</h3>
+
+<blockquote><p>Scope上下文，即是在执行语句时候能够访问到的所有变量的集合，Javascript是允许inner function存在的，因而其Scope就是一个链表形式的存在，其最顶端就是window(浏览器环境)，然后每定义一个function，就定义一个Scope Object，保存一个outer reference，以访问上一级变量集合，形成一个层级式的链，处于最底部的function会一层一层向上找变量，这也是为什么不要使用<code>t = 'without var is global var'</code>，会大大降低执行效率。附上<a href="http://dmitrysoshnikov.com/ecmascript/chapter-2-variable-object/">ECMA-262</a></p></blockquote>
+
+<p>而每个Scope保存的out reference是由function定义时决定的，而不是调用执行时决定的，如</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>   <span class="nx">alert</span><span class="p">(</span><span class="nx">right</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span><span class='line'><span class="nx">s</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">o</span><span class="p">();</span>
+</span><span class='line'><span class="p">})();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>alert结果是5而非4，如果把最上级的right定义注释掉，则right is not defined。所以这个时候是不是能理解闭包的原理了，虽然greeting方法已经消亡，但是返回的匿名函数的Scope保存有其上一级的outer reference，也就是text变量等的集合。</p>
+
+<p>下一篇文章会介绍一下使用闭包的场景和相应的危害，欢迎拍砖。</p>
+</section>
+
+
+
+	
+	  <section class="comments">
+	    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+	  </section>
+	
+</article>
+</div>
+
+    </div>
+  </div>
+  <footer class="main-footer">
+	<section class="interior-footer">
+		<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</section>
+</footer>
+
+
+  
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'zealot09';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zealot09.github.io/blog/2014/10/29/javascript-bi-bao/';
+        var disqus_url = 'http://zealot09.github.io/blog/2014/10/29/javascript-bi-bao/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

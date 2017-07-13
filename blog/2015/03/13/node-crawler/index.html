@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Node crawler - Zealot09&#8217;s Blog</title>
+  <meta name="author" content="zealot09">
+
+  
+  <meta name="description" content="javascript Node Crawler 1. Node crawler It&rsquo;s been a long time when my last blog. This time I&rsquo;m going to start an open source project &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zealot09.github.io/blog/2015/03/13/node-crawler">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/styles.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Zealot09's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/jquery.sidr.min.js"></script>
+  <script src="/javascripts/ah-blue.js"></script>
+  
+  
+
+</head> 
+
+<body   >
+  <div class="aux-container">
+    <a id="nav-toggle" href="#sidr"></a>
+    <a id="search-toggle"></a>
+</div>
+
+<header class="header-container clearfix">
+        <a href="/"><img src="/images/ah-frame.svg" onerror="this.onerror=null; this.src='ah-frame.png'"></a>
+</header>
+
+  <div class="main-container">
+    <div class="main wrapper clearfix">
+    	
+    	<aside>
+			
+			  	<div class="search-container">
+					<form action="http://google.com/search" method="get">
+						<fieldset role="search">
+							<input type="hidden" name="q" value="site:blog.alexharr.is" />
+							<input class="search-field" type="text" name="q" results="0" placeholder=""/>
+							<input class="submit" type="submit" value=""/>
+						</fieldset>
+					</form>
+				</div>
+			
+		  <div id="main-nav">
+    <nav>
+        <ul>
+        	<li>
+        		
+					<h3>Recent Posts</h3>
+<ul>
+	
+    <li>
+    	<a href="/blog/2016/02/18/react-redux/">Redux React Boilerplate</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/05/02/factorial-division/">Factorial Division</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/04/02/login-with-password-remembered/">Login With Password Remembered</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2015/03/13/node-crawler/">Node Crawler</a>
+    </li>
+    
+    <li>
+    	<a href="/blog/2014/10/29/javascript-bi-bao/">Javascript 闭包</a>
+    </li>
+    
+</ul>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/zealot09">@zealot09</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'zealot09',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/guol.zealot@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+				
+        	</li>
+        	<li>
+        		<ul>
+                    <li>Projects - <a href="http://www.alexharr.is" target="_blank">alexharr.is</a>
+        			<li>Github - <a href="http://www.github.com/alexharris" target="_blank">github.com/alexharris</a></li>
+                    <li>Twitter - <a href="http://www.twitter.com/alexharris6" target="_blank">@alexharris6</a></li>
+                    <li>Email - <a href="mailto:alexharris6@gmail.com" target="_blank">alexharris6 at gmail</a></li>
+        		</ul>
+        	</li>
+        </ul>
+    </nav>
+</div>
+		</aside>
+		
+      <div>
+<article>
+	<header>
+  <div class="article-tags">
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+  </div>
+  
+    <h1>
+      Node Crawler
+    </h1>
+  
+</header>
+
+  <section><h1>1. Node crawler</h1>
+
+<p>It&rsquo;s been a long time when my last blog. This time I&rsquo;m going to start an open source project called <a href="https://github.com/zealot09/node-crawler.git">node-crawler</a>. Let&rsquo;s get straight to the point, the project includes three parts:</p>
+
+<h2>1.1 Admin Dashboard</h2>
+
+<p>It&rsquo;s a distribute crawling service, the admin can check the crawler status, manage the crawling data, control the crawler client, manage the client config and deliver the client to different servers through the platform. Or some functions like data analyze or data statics. (This backend mainly developed with angularJs ).</p>
+
+<h2>1.2 Backend Service</h2>
+
+<p>Nodejs backend service which is responsible for collecting the uploaded data. Mainly include some functions like filter the data, analyze the crawling result and store into the database.</p>
+
+<h2>1.3 Crawler Client</h2>
+
+<p>The client is responsible for crawling the pages, execute scripts, control spider amount,. Think that the backend service send some configs, the client read it and do the crawling job the server send it.</p>
+
+<p>Actually the client should be smart to avoid preventing by the crawling target server, It should have a lot of strategies like changing the ip, changing the agent, limit the spider speed..and so on.</p>
+
+<p>The server send message to check the client and start the client, send config like to start the client:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">clientConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">//100/s to access the target website</span>
+</span><span class='line'>  <span class="nx">workers</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">//send 10 workers together crawling the website</span>
+</span><span class='line'>  <span class="c1">//some other configs</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>the client start to crawling work as the config:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">crawlerConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">target</span><span class="o">:</span> <span class="s2">&quot;http://www.taobao.com/p/xxxxx&quot;</span><span class="p">,</span> <span class="c1">//taget crawling website</span>
+</span><span class='line'>  <span class="nx">element</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">//target element</span>
+</span><span class='line'>  <span class="nx">attr</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">//the real data to grab</span>
+</span><span class='line'>  <span class="c1">//some other configs about the target web page</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This blog is just an introduction of the crawling system. Other blogs will introduce how to implement it! Welcome!</p>
+</section>
+
+
+
+	
+	  <section class="comments">
+	    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+	  </section>
+	
+</article>
+</div>
+
+    </div>
+  </div>
+  <footer class="main-footer">
+	<section class="interior-footer">
+		<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</section>
+</footer>
+
+
+  
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'zealot09';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zealot09.github.io/blog/2015/03/13/node-crawler/';
+        var disqus_url = 'http://zealot09.github.io/blog/2015/03/13/node-crawler/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>
