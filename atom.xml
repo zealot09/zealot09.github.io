@@ -4,7 +4,7 @@
   <title><![CDATA[Zealot09's Blog]]></title>
   <link href="http://zealot09.github.io/atom.xml" rel="self"/>
   <link href="http://zealot09.github.io/"/>
-  <updated>2017-07-13T23:52:37+08:00</updated>
+  <updated>2017-07-16T21:46:57+08:00</updated>
   <id>http://zealot09.github.io/</id>
   <author>
     <name><![CDATA[zealot09]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[react router complicated params no using query]]></title>
+    <link href="http://zealot09.github.io/blog/2017/07/16/react-router-complicated-params/"/>
+    <updated>2017-07-16T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2017/07/16/react-router-complicated-params</id>
+    <content type="html"><![CDATA[<h2>1. react router complicated params</h2>
+
+<p>We always facing a problem when building SPA apps with react &amp; react router between diff route paths ——
+list page and detail pages need to share some data:</p>
+
+<p>we can just solve  it with url params just in path, query, or search just like below</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// path params</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="s2">&quot;querylist/:taskId&quot;</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">QueryList</span><span class="p">}</span> <span class="o">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// and we can get the params like this</span>
+</span><span class='line'><span class="kr">const</span> <span class="p">{</span> <span class="nx">taskId</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">params</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// query &amp; search params</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span> <span class="nx">pathname</span><span class="o">:</span> <span class="s1">&#39;/crawler/group/duplicate/&#39;</span> <span class="o">+</span> <span class="nx">$</span><span class="p">{</span><span class="nx">row</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="nx">query</span><span class="o">:</span> <span class="p">{</span> <span class="nx">taskId</span><span class="o">:</span> <span class="mi">12345</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="nx">duplicate</span> <span class="nx">list</span><span class="o">&lt;</span><span class="err">/Link&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span> <span class="nx">pathname</span><span class="o">:</span> <span class="s1">&#39;/crawler/group/duplicate/&#39;</span> <span class="o">+</span> <span class="nx">$</span><span class="p">{</span><span class="nx">row</span><span class="p">.</span><span class="nx">id</span><span class="p">},</span> <span class="nx">search</span><span class="o">:</span> <span class="nx">querystring</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">taskId</span><span class="o">:</span> <span class="mi">12345</span> <span class="p">})</span> <span class="p">}</span> <span class="p">}</span><span class="o">&gt;</span><span class="nx">duplicate</span> <span class="nx">list</span><span class="o">&lt;</span><span class="err">/Link&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kr">const</span> <span class="p">{</span> <span class="nx">query</span><span class="p">,</span> <span class="nx">search</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">location</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>but the disadvantage is obviously:</p>
+
+<blockquote><p>the url is just ugly
+we should concern about the character set in url, it may exist the reality that browser not support
+such params in url</p></blockquote>
+
+<h2>2. solutions</h2>
+
+<h3>2.1 redux solution</h3>
+
+<p>actually we just want a centralized state manage solution, and we can just solve it with redux.
+But actually I don&rsquo;t like solution like this, if I suggest solution like this, there&rsquo;s no this post.</p>
+
+<p>2 reasons below:</p>
+
+<blockquote><p>redux can be cumbersome with some app state like fetching data, submiting data
+there&rsquo;s much template code(repeat code) using redux</p></blockquote>
+
+<p>so I quit redux</p>
+
+<h3>2.2 location state</h3>
+
+<p>actually react-router location support custom state passing with paths, we can just handle like this</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">pathname</span><span class="o">:</span> <span class="s1">&#39;/crawler/normalize/&#39;</span> <span class="o">+</span> <span class="nx">taskId</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">state</span><span class="o">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({</span> <span class="nx">taskName</span><span class="o">:</span> <span class="s1">&#39;123&#39;</span> <span class="p">},</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span> <span class="p">})</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// and can access</span>
+</span><span class='line'><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">state</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Just little tricks.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[redux react boilerplate]]></title>

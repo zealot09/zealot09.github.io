@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: react | Zealot09's Blog]]></title>
+  <link href="http://zealot09.github.io/blog/categories/react/atom.xml" rel="self"/>
+  <link href="http://zealot09.github.io/"/>
+  <updated>2017-07-16T21:46:57+08:00</updated>
+  <id>http://zealot09.github.io/</id>
+  <author>
+    <name><![CDATA[zealot09]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[react router complicated params no using query]]></title>
+    <link href="http://zealot09.github.io/blog/2017/07/16/react-router-complicated-params/"/>
+    <updated>2017-07-16T00:48:36+08:00</updated>
+    <id>http://zealot09.github.io/blog/2017/07/16/react-router-complicated-params</id>
+    <content type="html"><![CDATA[<h2>1. react router complicated params</h2>
+
+<p>We always facing a problem when building SPA apps with react &amp; react router between diff route paths ——
+list page and detail pages need to share some data:</p>
+
+<p>we can just solve  it with url params just in path, query, or search just like below</p>
+
+<pre><code class="javascript">// path params
+&lt;Route path="querylist/:taskId" component={QueryList} /&gt;
+
+// and we can get the params like this
+const { taskId } = this.props.params
+
+// query &amp; search params
+&lt;Link target="_blank" to={ { pathname: '/crawler/group/duplicate/' + ${row.id}, query: { taskId: 12345 } } }&gt;duplicate list&lt;/Link&gt;
+
+&lt;Link target="_blank" to={ { pathname: '/crawler/group/duplicate/' + ${row.id}, search: querystring.stringify({ taskId: 12345 }) } }&gt;duplicate list&lt;/Link&gt;
+
+const { query, search } = this.props.location
+</code></pre>
+
+<p>but the disadvantage is obviously:</p>
+
+<blockquote><p>the url is just ugly
+we should concern about the character set in url, it may exist the reality that browser not support
+such params in url</p></blockquote>
+
+<h2>2. solutions</h2>
+
+<h3>2.1 redux solution</h3>
+
+<p>actually we just want a centralized state manage solution, and we can just solve it with redux.
+But actually I don&rsquo;t like solution like this, if I suggest solution like this, there&rsquo;s no this post.</p>
+
+<p>2 reasons below:</p>
+
+<blockquote><p>redux can be cumbersome with some app state like fetching data, submiting data
+there&rsquo;s much template code(repeat code) using redux</p></blockquote>
+
+<p>so I quit redux</p>
+
+<h3>2.2 location state</h3>
+
+<p>actually react-router location support custom state passing with paths, we can just handle like this</p>
+
+<pre><code class="javascript">this.props.router.push({ pathname: '/crawler/normalize/' + taskId,
+  state: Object.assign({ taskName: '123' }, this.props.location.state) })
+
+// and can access
+const state = this.props.location.state  
+</code></pre>
+
+<p>Just little tricks.</p>
+]]></content>
+  </entry>
+  
+</feed>
