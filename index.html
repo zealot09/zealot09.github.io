@@ -9,7 +9,7 @@
   <meta name="author" content="zealot09">
 
   
-  <meta name="description" content="react React Router Complicated Params No Using Query 1. react router complicated params We always facing a problem when building SPA apps with react &hellip;">
+  <meta name="description" content="react React Router Complicated Params No Using Query react router complicated params We always facing a problem when building SPA apps with react & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -168,7 +168,7 @@
   
 </header>
 
-  <section><h2>1. react router complicated params</h2>
+  <section><h2>react router complicated params</h2>
 
 <p>We always facing a problem when building SPA apps with react &amp; react router between diff route paths ——
 list page and detail pages need to share some data:</p>
@@ -204,25 +204,27 @@ list page and detail pages need to share some data:</p>
 
 <p>but the disadvantage is obviously:</p>
 
-<blockquote><p>the url is just ugly
-we should concern about the character set in url, it may exist the reality that browser not support
+<blockquote><p>1.the url is just ugly</p>
+
+<p>2.we should concern about the character set in url, it may exist the reality that browser not support
 such params in url</p></blockquote>
 
-<h2>2. solutions</h2>
+<h2>solutions</h2>
 
-<h3>2.1 redux solution</h3>
+<h3>redux solution</h3>
 
 <p>actually we just want a centralized state manage solution, and we can just solve it with redux.
 But actually I don&rsquo;t like solution like this, if I suggest solution like this, there&rsquo;s no this post.</p>
 
 <p>2 reasons below:</p>
 
-<blockquote><p>redux can be cumbersome with some app state like fetching data, submiting data
-there&rsquo;s much template code(repeat code) using redux</p></blockquote>
+<blockquote><p>1.redux can be cumbersome with some app state like fetching data, submiting data</p>
+
+<p>2.there&rsquo;s much template code(repeat code) using redux</p></blockquote>
 
 <p>so I quit redux</p>
 
-<h3>2.2 location state</h3>
+<h3>location state</h3>
 
 <p>actually react-router location support custom state passing with paths, we can just handle like this</p>
 
